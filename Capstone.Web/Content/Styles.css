@@ -1,0 +1,161 @@
+﻿
+body {
+    background-color: black;
+    background-image: url('Images/Misc/adventure-calm-clouds-414171-blur.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container-main-item {
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding: 12px;
+}
+
+.custom-glass-effect {
+    background-color: rgba(232, 232, 232, 0.32);
+}
+
+#container-header {
+    background-image: url('Images/Misc/pexels-photo-adventure-calm-clouds-414171.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#header-logo {
+    width: 30em;
+}
+
+.container-description {
+    background-color: rgba(222,219,210,.93);
+    padding: 4px;
+}
+
+.custom-shadow-effect {
+    box-shadow: 0px 0px 8px 1px rgba(87, 87, 87, 0.80);
+}
+
+.home-img {
+    width: 100%;
+}
+
+.details-large-img {
+    margin: 15px;
+    width: 90%;
+}
+
+.detail-row-img {
+    margin: 10px;
+}
+
+#weather-img {
+    width: 100%;
+    background-color: #dadbdc;
+}
+
+#weather-panel {
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+.footer-text {
+    color: #8f9296;
+}
+
+.labels{
+    font-weight:bold;
+}
+
+.temp-low{
+    color: blue;
+}
+
+.temp-high{
+    color: red;
+}
+
+.general-content {
+    background-color: #dad8cf;
+    padding: 20px;
+    margin-top:20px;
+
+}
+
+.about-page{
+    padding:20px;
+}
+
+.box-shadow-hard {
+    box-shadow: 0px 0px 8px 1px rgb(77, 77, 77);
+}
+.box-shadow-soft {
+    box-shadow: 0px 0px 8px 1px rgb(137, 137, 137);
+}
+
+/*-------------TEST CLASSES-------------*/
+/*-------------TEST CLASSES-------------*/
+/*-------------TEST CLASSES-------------*/
+
+/*
+.test-blue{
+    border:1px solid blue;
+}
+
+.test-pink {
+    border: 1px solid pink;
+}
+
+.test-red {
+    border: 1px solid red;
+}
+*/
+
+/*-------------TEST CLASSES OVER-------------*/
+/*-------------TEST CLASSES OVER-------------*/
+/*-------------TEST CLASSES OVER-------------*/
+
+/*-------------COLORS-------------*/
+/*-------------COLORS-------------*/
+/*-------------COLORS-------------*/
+
+/*Used For navs*/
+.bgc-grey-1 {
+    background-color: #343a40;
+}
+
+.c-grey-1 {
+    color: #343a40
+}
+
+/*Used in the Logo*/
+.bgc-green-1 {
+    background-color: #20c80a;
+}
+
+.c-green-1 {
+    color: #20c80a;
+}
+
+/*off used for text box backgrounds*/
+.bgc-lightgrey-1 {
+    background-color: #DADBDC;
+}
+
+.c-lightgrey-1 {
+    color: #DADBDC;
+}
+
+/*used as the general glass look on the page*/
+.bgc-glass {
+    background-color: rgba(236, 237, 237, 0.48);
+}
+
+.c-glass {
+    color: rgba(236, 237, 237, 0.48);
+}
+
+/*-------------COLORS OVER-------------*/
+/*-------------COLORS OVER-------------*/
+/*-------------COLORS OVER-------------*/

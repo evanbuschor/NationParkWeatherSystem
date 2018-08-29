@@ -1,0 +1,84 @@
+﻿@using Capstone.Web.Models
+
+@using Capstone.Web.Helpers
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>National Park Weather Service</title>
+    <link rel="stylesheet" href="~/Content/Bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Styles.css" />
+
+
+</head>
+
+<body>
+
+    <div id="container-header">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <a href="~/Home/Index">
+                        <img id="header-logo" src="~/Content/Images/Misc/logo.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item @(Session["currentPage"].ToString() == "home" ? "active" : "")">
+                        <a class="nav-link" href="~/Home/Index">Home</a>
+                    </li>
+
+                    <li class="nav-item @(Session["currentPage"].ToString() == "survey" ? "active" : "")">
+                        <a class="nav-link" href="~/Survey/Index">Survey</a>
+                    </li>
+
+                    <li class="nav-item @(Session["currentPage"].ToString() == "favorites" ? "active" : "")">
+                        <a class="nav-link" href="~/FavoriteParks/Index">Favorites</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item dropdown mr-auto">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tempurature Units
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            <a class="dropdown-item @((TempuratureHelper.EUnits)Session["units"] == TempuratureHelper.EUnits.c ? "disabled" : "")" href="~/Home/ChangeUnits?units=@TempuratureHelper.EUnits.c">Celsius</a>
+                            <a class="dropdown-item @((TempuratureHelper.EUnits)Session["units"] == TempuratureHelper.EUnits.f ? "disabled" : "")" href="~/Home/ChangeUnits?units=@TempuratureHelper.EUnits.f">Fahrenheit</a>
+                            <a class="dropdown-item @((TempuratureHelper.EUnits)Session["units"] == TempuratureHelper.EUnits.k ? "disabled" : "")" href="~/Home/ChangeUnits?units=@TempuratureHelper.EUnits.k">Kelvin</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container px-0 py-0 test-blue">
+        @RenderBody()
+    </div>
+
+    <div id="footer" class="bgc-grey-1 custom-shadow-effect">
+        <div class="container text-center">
+            <span class="footer-text">Created By: Dan & Evan | July 2018 | <a href="~/About/Index">About</a></span>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

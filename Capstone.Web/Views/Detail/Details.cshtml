@@ -1,0 +1,118 @@
+﻿@model Capstone.Web.Models.DetailViewModel
+
+@using Capstone.Web.Helpers
+
+<div class=" container custom-glass-effect">
+
+    <div class="row detail-row-img">
+        <div class="col-12 text-center">
+            <img class="details-large-img custom-shadow-effect" src="~/Content/Images/Parks/@{@Model.Park.Code}.jpg" />
+        </div>
+
+        <div style="margin-bottom:15px;" class="col-12 bgc-lightgrey-1 custom-shadow-effect">
+            <h1>@Model.Park.Name</h1>
+            <span class="labels">Annual Visitors:</span> @string.Format("{0:n0}",Model.Park.AnnualVisitors) <br />
+            <span class="labels">Climate:</span> @Model.Park.Climate <br />
+            <span class="labels">Elevation:</span> @string.Format("{0:n0}",Model.Park.Elevation) ft. <br />
+            <span class="labels">Entry Fee:</span> @Model.Park.EntryFee.ToString("c") <br />
+            <span class="labels">Miles Of Trails:</span> @string.Format("{0:n0}", Math.Round(Model.Park.MilesOfTrails, 1))  <br />
+            <span class="labels">Name:</span> @Model.Park.Name <br />
+            <span class="labels">Number Of Campsites:</span> @string.Format("{0:n0}", Model.Park.NumberOfCampsites) <br />
+            <span class="labels">Quote:</span> @Model.Park.Quote <br />
+            <span class="labels">Quote Source:</span> @Model.Park.QuoteSource <br />
+            <span class="labels">Size: </span>@string.Format("{0:n0}", Model.Park.Size) acres <br />
+            <span class="labels">Species:</span> @string.Format("{0:n0}", Model.Park.Species) <br />
+            <span class="labels">State:</span> @Model.Park.State <br />
+            <span class="labels">Year Founded:</span> @Model.Park.YearFounded <br />
+            <span class="labels">Description:</span> @Model.Park.Description <br />
+        </div>
+    </div>
+
+
+</div>
+<div id="weather-panel" class="container bgc-glass box-shadow-hard">
+
+    @*Day 1 Forecast*@
+    <div class="row justify-content-md-center">
+
+        <div class="col-md-8 col-lg-4 weather-item">
+            <div class="col-12 text-center">
+                <h1>Today</h1>
+            </div>
+            <div class="col-12 bgc-lightgrey-1 box-shadow-hard">
+                <img id="weather-img" src="~/Content/Images/Weather/@{@Model.WeatherList[0].Forecast}.png" />
+            </div>
+
+            <div style="margin:4px" class="row bgc-lightgrey-1 box-shadow-hard">
+                <div class="temp-low col-md-6 col-lg-6">Low: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[0].LowTemp)</div>
+                <div class="temp-high col-md-6 col-lg-6">High: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[0].HighTemp)</div>
+            </div>
+
+            <div class="col-12 bgc-lightgrey-1 box-shadow-hard">
+
+                @foreach (var item in TempuratureHelper.Advisory(Model.WeatherList[0]))
+                {
+                    <h4>@item</h4>
+                }
+            </div>
+
+        </div>
+        <div class="row col-8 justify-content-md-center justify-content-center">
+            <div class="col-12 text-center">
+                <h2>Next 4 Days...</h2>
+            </div>
+            @* Day 2 Forecast *@
+            <div class="col-md-5 col-lg-3 weather-item">
+
+                <div class="col-12 bgc-lightgrey-1 box-shadow-hard">
+
+                    <img id="weather-img" src="~/Content/Images/Weather/@{@Model.WeatherList[1].Forecast}.png" />
+                </div>
+
+                <div style="margin:4px" class="row bgc-lightgrey-1 box-shadow-hard">
+                    <div class="temp-low col-md-6 col-lg-6">Low: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[1].LowTemp)</div>
+                    <div class="temp-high col-md-6 col-lg-6">High: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[1].HighTemp)</div>
+                </div>
+            </div>
+
+            @* Day 3 Forecast *@
+            <div class="col-md-5 col-lg-3 weather-item">
+
+                <div class="col-12 bgc-lightgrey-1 box-shadow-hard">
+                    <img id="weather-img" src="~/Content/Images/Weather/@{@Model.WeatherList[2].Forecast}.png" />
+                </div>
+
+                <div style="margin:4px" class="row bgc-lightgrey-1 box-shadow-hard">
+                    <div class="temp-low col-md-6 col-lg-6">Low: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[2].LowTemp)</div>
+                    <div class="temp-high col-md-6 col-lg-6">High: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[2].HighTemp)</div>
+                </div>
+            </div>
+            @* Day 4 Forecast *@
+            <div class="col-md-5 col-lg-3 weather-item">
+
+                <div class="col-12 bgc-lightgrey-1 box-shadow-hard">
+                    <img id="weather-img" src="~/Content/Images/Weather/@{@Model.WeatherList[3].Forecast}.png" />
+                </div>
+
+                <div style="margin:4px" class="row bgc-lightgrey-1 box-shadow-hard">
+                    <div class="temp-low col-md-6 col-lg-6">Low: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[3].LowTemp)</div>
+                    <div class="temp-high col-md-6 col-lg-6">High: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[3].HighTemp)</div>
+                </div>
+            </div>
+            @* Day 5 Forecast *@
+            <div class="col-md-5 col-lg-3 weather-item">
+
+                <div class="col-12 bgc-lightgrey-1 box-shadow-hard">
+                    <img id="weather-img" src="~/Content/Images/Weather/@{@Model.WeatherList[4].Forecast}.png" />
+                </div>
+
+                <div style="margin:4px" class="row bgc-lightgrey-1 box-shadow-hard">
+                    <div class="temp-low col-md-6 col-lg-6">Low: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[4].LowTemp)</div>
+                    <div class="temp-high col-md-6 col-lg-6">High: @TempuratureHelper.DisplayTempurate(Session["units"], Model.WeatherList[4].HighTemp)</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

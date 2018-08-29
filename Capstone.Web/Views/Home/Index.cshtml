@@ -1,0 +1,36 @@
+﻿
+@model List<Capstone.Web.Models.Park>
+
+@foreach (var item in Model)
+{
+    <div class="container my-4 bgc-glass box-shadow-hard">
+        <div class="row py-4 px-2">
+
+            <!--Picture-->
+            <div class="container col-lg-5 col-md-12">
+                <a href="~/Detail/Index?parkCode=@{@item.Code}">
+                    <img class="home-img custom-shadow-effect" src="~/Content/Images/Parks/@{@item.Code}.jpg" />
+                </a>
+            </div>
+
+            <!--Park Info-->
+            <div class="container col-lg-7 col-md-12">
+
+                <!--Park Heading-->
+                <div class="container col-12">
+                    <h2>@item.Name</h2> <h6>@item.State</h6>
+                </div>
+
+                <!--Park Description-->
+                <div class="container p-3 col-12 bgc-lightgrey-1 box-shadow-soft">
+                    @item.Description
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+}
+

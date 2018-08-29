@@ -1,0 +1,17 @@
+﻿@using Capstone.Web.DALs
+@using Capstone.Web.Models
+@using Capstone.Web.Controllers
+@model Dictionary<string, int>
+
+<div class="m-4 p-3 bgc-glass box-shadow-hard">
+    <h1 class="display-4">Favorite Parks</h1>
+    <div class="bgc-lightgrey-1 box-shadow-hard">
+        <ol>
+            @foreach (var item in Model)
+            {
+                <li><span style="font-weight:bold">@item.Key</span>   Votes: @item.Value</li>
+            }
+        </ol>
+
+    </div>
+</div>
